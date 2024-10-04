@@ -22801,11 +22801,14 @@ body {
   }
 
   .dropdown:hover .dropdown-menu {
-    display: block; /* Show dropdown on hover in mobile */
+    display: block;
   }
 
   .dropdown-item {
-    color: #333; /* Change text color for dropdown items */
-    font-size: x-large;
-  }
+    color: red;
+    font-size:medium;
+    }
+}
+html {
+  scroll-behavior: smooth;
 }

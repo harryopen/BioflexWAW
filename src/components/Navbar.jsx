@@ -25,12 +25,9 @@ function Navbar() {
   }, []);
 
   const MobileView = () => {
-    !hamburger ? setHamburger(true) : setHamburger(false);
+    setHamburger((prev) => !prev);
   };
 
-  const NestedList = () => {
-    !isopen ? setIsopen(true) : setIsopen(false);
-  };
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light d-lg-none">
@@ -221,7 +218,7 @@ function Navbar() {
                         <ul className="dropdown-menu-col-1">
                           {corporate.map((item, index) => (
                             <li key={index}>
-                              <a href={item.link}>{item.title}</a>
+                              <Link to={`/${index}`}>{item.title}</Link>
                             </li>
                           ))}
                         </ul>

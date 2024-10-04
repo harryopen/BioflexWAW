@@ -12,6 +12,7 @@ import Carousel from './components/Carousel';
 import CategoryProducts from './pages/CategoryProducts';
 import DetailedProduct from './pages/DetailedProduct';
 import ScrollUpButton from './components/ScrollUpButton';
+import Corporate from './pages/Corporate';
 
 function App() {
   return (
@@ -34,11 +35,8 @@ function App() {
             element={<DetailedProduct />}
           ></Route>
 
-          {/* <Route path="/women" element={<ShopCategory  banner={women_banner}category="women"/>}/>
-           <Route path="/kids" element={<ShopCategory  banner={kids_banner}category="kids"/>}/>
-           <Route path="/Research" element={<Research/>}/>
-           <Route path="/Marketing" element={<Marketing/>}/>
-           <Route path ="/Latest-News" element ={<LatestNews/>}/> */}
+          {/* <Route path="/corporate" element={<Corporate />} /> */}
+          <Route path="/:componentId" element={<Corporate />} />
         </Routes>
         <Footer />
       </BrowserRouter>

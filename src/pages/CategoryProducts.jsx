@@ -14,9 +14,6 @@ const CategoryProducts = () => {
       .catch((error) => console.error('Error fetching data:', error));
   }, [catId]);
 
-  console.log('The data sent by ', data);
-  console.log('category Name is ', catId); // For debugging
-
   return (
     <>
       {/* Banner start from here */}
@@ -27,16 +24,19 @@ const CategoryProducts = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h1>General Ophthalmic Products</h1>
+              <h1>
+                {data && data.length > 0
+                  ? data[0].pcategory_name
+                  : 'No products available'}
+              </h1>
               <div className="breadcrumbs-area">
                 <ul>
                   <li>
-                    <a href="#">Home</a>
+                    <Link to="/">Home</Link>
                   </li>
                   <li>
-                    <a href="#">Ophthalmic Products</a>
+                    {data && data.length > 0 ? data[0].pcategory_name : null}
                   </li>
-                  <li>Disposable Surgical Instruments</li>
                 </ul>
               </div>
             </div>
